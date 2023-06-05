@@ -7,10 +7,18 @@ class Test {
         System.out.println("The value of test is: " + value);
     }
 }
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello World!");
         Test test = new Test(5);
+        Gun gun = new Gun(5);
+        gun.shoot();
+        gun.shoot();
+        gun.shoot();
+        gun.shoot();
+        gun.shoot();
+        gun.shoot();
         test.printValue();
     }
 }
