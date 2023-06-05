@@ -28,4 +28,4 @@ clean:
 
 # Run the program
 run: all
-	@java -cp $(OUT_DIR) Main
+	@java -cp $(OUT_DIR) Lox
