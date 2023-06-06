@@ -1,3 +1,5 @@
+package lox;
+
 enum TokenType {
     //Single char tokens
     LEFT_PAREN, RIGHT_PAREN, LEFT_BRACE, RIGHT_BRACE,
@@ -10,7 +12,7 @@ enum TokenType {
     LESS, LESS_EQUAL,
 
     //Literals
-    IDENTIFIERS, STRING, NUMBER,
+    IDENTIFIER, STRING, NUMBER,
 
     //Keywords
     AND, CLASS, ELSE, FALSE, FUN, FOR, IF, NIL, OR,
