@@ -12,7 +12,9 @@ public class GenerateAst {
             System.exit(64);
         }
         String outputDir = args[0];
+//        String outputDir = "C:\\Users\\ACER\\Documents\\Projects\\Java\\interpreter\\src\\lox";
         defineAst(outputDir, "Expr", Arrays.asList(
+                "Assign     : Token name, Expr value",
                 "Binary     : Expr left, Token operator, Expr right",
                 "Grouping   : Expr expression",
                 "Literal    : Object value",
