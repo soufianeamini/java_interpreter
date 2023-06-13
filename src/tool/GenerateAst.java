@@ -2,7 +2,6 @@ package tool;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,15 +12,17 @@ public class GenerateAst {
             System.exit(64);
         }
         String outputDir = args[0];
-//        defineAst(outputDir, "Expr", Arrays.asList(
-//                "Binary     : Expr left, Token operator, Expr right",
-//                "Grouping   : Expr expression",
-//                "Literal    : Object value",
-//                "Unary      : Token operator, Expr right"
-//        ));
+        defineAst(outputDir, "Expr", Arrays.asList(
+                "Binary     : Expr left, Token operator, Expr right",
+                "Grouping   : Expr expression",
+                "Literal    : Object value",
+                "Unary      : Token operator, Expr right",
+                "Variable   : Token name"
+        ));
         defineAst(outputDir, "Stmt", Arrays.asList(
                 "Expression : Expr expression",
-                "Print      : Expr expression"
+                "Print      : Expr expression",
+                "Var        : Token name, Expr initializer"
         ));
     }
 
