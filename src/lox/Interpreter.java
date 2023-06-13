@@ -115,6 +115,12 @@ public class Interpreter implements Expr.Visitor<Object> {
                 if (left instanceof String && right instanceof String) {
                     return (String)left + (String)right;
                 }
+                if (left instanceof String && right instanceof Double) {
+                    String value = (String)left + ((Double)right).toString();
+                    if (value.endsWith(".0"))
+                        value = value.substring(0, value.length() - 2);
+                    return value;
+                }
 
                 throw new RuntimeError(expr.operator,
                         "Operands must be two numbers or two strings.");
