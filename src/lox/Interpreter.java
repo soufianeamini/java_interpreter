@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Interpreter implements Expr.Visitor<Object>,
                                     Stmt.Visitor<Void> {
-    private Environment environment = new Environment();
+    final Environment globals = new Environment();
+    private Environment environment = globals;
 
     void interpret(List<Stmt> statements) {
         try {
@@ -235,6 +236,11 @@ public class Interpreter implements Expr.Visitor<Object>,
         }
 
         LoxCallable function = (LoxCallable)callee;
+        if (arguments.size() != function.arity()) {
+            throw new RuntimeError(expr.paren, "Expected " +
+                    function.arity() + " arguments but got " +
+                    arguments.size() + ".");
+        }
         return function.call(this, arguments);
     }
 }
