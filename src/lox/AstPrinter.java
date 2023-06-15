@@ -19,9 +19,13 @@ public class AstPrinter implements Expr.Visitor<String> {
     public String visitCallExpr(Expr.Call expr) {
         StringBuilder str = new StringBuilder();
         str.append(expr.callee.accept(this));
+        str.append("(");
         for (Expr arg : expr.arguments) {
             str.append(arg.accept(this));
+            str.append(",");
         }
+        str.deleteCharAt(str.length());
+        str.append(")");
         return str.toString();
     }
 
