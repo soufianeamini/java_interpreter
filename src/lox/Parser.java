@@ -28,7 +28,7 @@ public class Parser {
 
     private Stmt declaration() {
         try {
-            if (match(VAR)) return varDeclaration();
+            if (match(LET)) return varDeclaration();
 
             return statement();
         } catch (ParseError error) {
@@ -53,7 +53,7 @@ public class Parser {
         Stmt initializer;
         if (match(SEMICOLON)) {
             initializer = null;
-        } else if (match(VAR)) {
+        } else if (match(LET)) {
             initializer = varDeclaration();
         } else {
             initializer = expressionStatement();
@@ -352,7 +352,7 @@ public class Parser {
             switch (peek().type) {
                 case CLASS:
                 case FUN:
-                case VAR:
+                case LET:
                 case FOR:
                 case IF:
                 case WHILE:
