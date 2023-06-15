@@ -7,12 +7,12 @@ import java.util.List;
 
 public class GenerateAst {
     public static void main(String[] args) throws IOException {
-        if (args.length != 1) {
-            System.err.println("Usage: generate_ast <output_directory>");
-            System.exit(64);
-        }
-        String outputDir = args[0];
-//        String outputDir = "C:\\Users\\ACER\\Documents\\Projects\\Java\\interpreter\\src\\lox";
+//        if (args.length != 1) {
+//            System.err.println("Usage: generate_ast <output_directory>");
+//            System.exit(64);
+//        }
+//        String outputDir = args[0];
+        String outputDir = "C:\\Users\\ACER\\Documents\\Projects\\Java\\interpreter\\src\\lox";
         defineAst(outputDir, "Expr", Arrays.asList(
                 "Assign     : Token name, Expr value",
                 "Binary     : Expr left, Token operator, Expr right",
@@ -27,7 +27,8 @@ public class GenerateAst {
                 "Expression : Expr expression",
                 "If         : Expr condition, Stmt thenBranch, Stmt elseBranch",
                 "Print      : Expr expression",
-                "Var        : Token name, Expr initializer"
+                "Var        : Token name, Expr initializer",
+                "While      : Expr condition, Stmt body"
         ));
     }
 
