@@ -28,3 +28,10 @@ fn main() {
 }
 
 main();
+
+class Node {
+}
+
+let n = Node();
+n.x = 3;
+print n.x;
