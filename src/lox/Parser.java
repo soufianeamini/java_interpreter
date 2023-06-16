@@ -106,6 +106,7 @@ public class Parser {
     }
 
     private Stmt printStatement() {
+        if (match(SEMICOLON)) return new Stmt.Print(new Expr.Literal(""));
         Expr value = expression();
         consume(SEMICOLON, "Expected ';' after value.");
         return new Stmt.Print(value);

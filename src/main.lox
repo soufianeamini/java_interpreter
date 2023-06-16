@@ -1,6 +1,6 @@
 fn main() {
     print "Here's a drawing of a triangle using *, iteratively and recursively";
-    print"";
+    print;
 }
 
 main();
