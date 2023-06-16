@@ -1,6 +1,30 @@
+fn iter_triangle(char, n) {
+    for (let i = 0; i < n; i = i + 1) {
+        let str = "";
+        for (let j = i; j >= 0; j = j-1)
+            str = str + char;
+        print str;
+    }
+}
+
+fn recur_triangle(char, n) {
+    if (n <= 0) return;
+    recur_triangle(char, n -1);
+    let str = "";
+    for (let i = 0; i < n; i = i + 1)
+        str = str + char;
+    print str;
+}
+
 fn main() {
+    let n = 3;
     print "Here's a drawing of a triangle using *, iteratively and recursively";
     print"";
+    print "Iteratively:";
+    iter_triangle("*", n);
+    print"";
+    print "Recursively:";
+    recur_triangle("*", n);
 }
 
 main();
