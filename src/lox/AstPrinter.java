@@ -18,14 +18,18 @@ public class AstPrinter implements Expr.Visitor<String> {
     @Override
     public String visitCallExpr(Expr.Call expr) {
         StringBuilder str = new StringBuilder();
-        str.append(expr.callee.accept(this));
+
+//        str.append(expr.callee.accept(this));
+        str.append(print(expr));
         str.append("(");
         for (Expr arg : expr.arguments) {
-            str.append(arg.accept(this));
+//            str.append(arg.accept(this));
+            str.append(print(arg));
             str.append(",");
         }
-        str.deleteCharAt(str.length());
+        str.deleteCharAt(str.length() - 1);
         str.append(")");
+
         return str.toString();
     }
 
@@ -62,7 +66,8 @@ public class AstPrinter implements Expr.Visitor<String> {
         builder.append("(").append(name);
         for (Expr expr : exprs) {
             builder.append(" ");
-            builder.append(expr.accept(this));
+//            builder.append(expr.accept(this));
+            builder.append(print(expr));
         }
         builder.append(")");
 
