@@ -1,9 +1,6 @@
 fn main() {
-    let x = 3;
-
-    print x ;
-    let y = 4;
-    print y;
+    print "Here's a drawing of a triangle using *, iteratively and recursively";
+    print"";
 }
 
 main();
