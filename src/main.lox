@@ -7,3 +7,21 @@ fn fibonacci(n) {
 for (let i = 0; i < 25; i = i + 1) {
     print fibonacci(i);
 }
+
+fn makeCounter() {
+    let i = 0;
+    fn count() {
+        i = i + 1;
+        print i;
+    }
+
+    return count;
+}
+
+let counter = makeCounter();
+counter();
+counter();
+
+fn printer(p) {print p;}
+let x = printer;
+x("Hello");
