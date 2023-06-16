@@ -1,9 +1,9 @@
-let a = "global";
+fn main() {
+    let x = 3;
 
-{
-    fn showA() { print a;}
-
-    showA();
-    let a = "inner";
-    showA();
+    print x ;
+    let y = 4;
+    print y;
 }
+
+main();
