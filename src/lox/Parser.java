@@ -28,7 +28,7 @@ public class Parser {
 
     private Stmt declaration() {
         try {
-            if (match(FUN)) return function("function");
+            if (match(FN)) return function("function");
             if (match(LET)) return varDeclaration();
 
             return statement();
@@ -372,7 +372,7 @@ public class Parser {
 
             switch (peek().type) {
                 case CLASS:
-                case FUN:
+                case FN:
                 case LET:
                 case FOR:
                 case IF:
