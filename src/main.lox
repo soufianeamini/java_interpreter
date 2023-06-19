@@ -1,9 +1,1 @@
-class Bob {
-    eat() {
-        print "Bob is eating";
-    }
-}
-
-class SmallBob : Bob {}
-
-SmallBob().eat();
+print "Hello World";
