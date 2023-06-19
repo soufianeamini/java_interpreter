@@ -4,4 +4,6 @@ class Bob {
     }
 }
 
-Bob().eat();
+class SmallBob : Bob {}
+
+SmallBob().eat();
