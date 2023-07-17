@@ -167,6 +167,8 @@ public class Parser {
 
     private Stmt expressionStatement() {
         Expr expr = expression();
+        if (peek().type == EOF) return new Stmt.Print(expr);
+
         consume(SEMICOLON, "Expected ';' after expression.");
         return new Stmt.Expression(expr);
     }
